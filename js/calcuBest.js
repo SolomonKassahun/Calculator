@@ -10,7 +10,11 @@ console.log("1. Addition");
 console.log("2. subtraction");
 console.log("3. multiplcation");
 console.log("4. divison");
-service = prompt("enter the operation you want  from the following operaion \n 1. add \n 2. sub \n 3. mul \n 4. div  ");
+console.log("5. Min");
+console.log("6. Max");
+console.log("7. Average");
+//console.log("4. divison");
+service = prompt("enter the operation you want  from the following operaion \n 1. add \n 2. sub \n 3. mul \n 4. div  \n 5. Min \n 6. Max \n 7. Average ");
 
 var i = 0
 var text = [];
@@ -54,9 +58,10 @@ if (service == 1){
     
 }
 else{
-    num1 = parseInt(prompt("enter first number"));
-    num2 = parseInt(prompt("enter second number"));
+   
       if (service == 2){
+        num1 = parseInt(prompt("enter first number"));
+        num2 = parseInt(prompt("enter second number"));
         function sub(){
             return num1 - num2;
         }
@@ -64,6 +69,8 @@ else{
         console.log("subtracting the two number gives => "  + sub(text));
         
     }  else if (service == 4){
+        num1 = parseInt(prompt("enter first number"));
+        num2 = parseInt(prompt("enter second number"));
         function div(){
             if (num2 == 0){
                 console.log("divison by zero is infinity")
@@ -71,10 +78,56 @@ else{
             return num1 / num2;
         }
         console.log("dividing "  + num1 + " by " + num2 + " gives " + div(num1, num2));
+        
+    } else if (service == 5){
+        numberOfElement = prompt("How many number do you want to compare");
+    while (i < numberOfElement ){
+        text += prompt("please enter " + (i + 1)  + " number ");
+        i++;
+     }  
+     
+    console.log("you are interested to find smallest number" );
+    function Min(small){
+        var small = text[0];
+        for (var i = 0; i < text.length; i++) {
+            if(text[i]< small)
+            {
+                small = text[i];
+            }
+        
+        }
+        return small;
+     
     }
-    
-    
-    
+    console.log("the smallest number among the number is " + Min());
+       
+    }else if (service == 6){
+        numberOfElement = prompt("How many number do you want to compare");
+    while (i < numberOfElement ){
+        text += prompt("please enter " + (i + 1)  + " number ");
+        i++;
+     }  
+     
+    console.log("you are interested to find largest number" );
+    function Man(small){
+        var small = text[0];
+        for (var i = 0; i < text.length; i++) {
+            if(text[i] > small)
+            {
+                small = text[i];
+            }
+        
+        }
+        return small;
+     
+    }
+    console.log("the Largest number among the number is " + Man());
+        } else if (service == 7){
+            function Average(){
+               
+            }
+            console.log("dividing "  + num1 + " by " + num2 + " gives " + div(num1, num2));
+        }
     
     
     // this is question three
